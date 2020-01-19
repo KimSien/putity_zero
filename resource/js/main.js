@@ -21,7 +21,7 @@ class F extends Putity {
     this.changeState("goukei", temp);
   }
   run() {
-     self.f = this;    
+     window.f = this;    
   }
 
   render() {
@@ -33,21 +33,18 @@ class F extends Putity {
         <br>goukei is ${self.state.goukei}
         <span id="app2"></span>
         </p>
-        <button onClick="self.f.sender()">test</button>  
+        <button onClick="window.f.sender()">test</button>  
         `;
   }
 }
 
-let action;
 const f = new F({
   props: {
     name: "new name"
   },
   targetDom: "app"
-},action);
+});
 f.run();
-
-
 
 
 function sender2(){
@@ -57,6 +54,12 @@ class FF extends Putity {
   constructor(h) {
     super(h);
   }
+  setState() {
+    return (self.state = {
+      test: "test2 message",
+      goukei: 1
+    });
+  }
   sender2() {
     console.log("test");
   }
@@ -65,7 +68,7 @@ class FF extends Putity {
   }
   render() {
     return `<p>
-              sub module --------
+              sub module -------- ${this.state.test}
           </p>
           <button onClick="self.ff.sender2()">click</button>
               `;
@@ -79,3 +82,4 @@ const ff = new FF({
   targetDom: "app2"
 });
 ff.run();
+f.setjoin(ff);

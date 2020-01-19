@@ -8,17 +8,25 @@ export default class Putity {
     this.state = this.setState();
     this.props = h.props;
 
+    this.joinpt = {};
+
     if (typeof this.targetDom != undefined) {
       this.targetDom = h.targetDom;
       this._render();
     }
   }
   setState() {}
+  
+  setjoin(j){
+    this.joinipt = j;
+  }
+
   changeState(name, value) {
     self.state[name] = value;
 
     //if(this.targetDom != void 0){
     this._render();
+    this.joinipt._render();
     //}
   }
   _render() {
