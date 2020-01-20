@@ -1,80 +1,108 @@
 import Putity from "./Putity/Putity";
 
-class FF extends Putity {
-  constructor(h) {
-    super(h);
+var sta = {
+  fff: {
+    test: "this is global ff"
+  },
+  ff: {
+    test: "this is global ff"
+  },
+  f: {
+    test: "test message",
+    goukei: 1
   }
-  setState() {
-    return (self.state = {
-      test2: "test2"
-    });
-  }
-  sender2() {
-    console.log("test");
-    this.changeState("test2", "child change message");
+};
+
+
+class FF {
+  constructor() {
+    this.run();
   }
   run() {
-    window.ff = this;
+    self.ff = this;
   }
-  render() {
-    return `<p>
-                sub module -------- ${this.state.test2}
-            </p>
-            <button onClick="window.ff.sender2()">click</button>
-                `;
+  df() {
+    sta.ff.test = "click df";
+    //console.log("test");
+    Renders();
+  }
+  component() {
+    return `
+        <div>submodule des ------------ ${sta.ff.test}
+        <button onClick="self.ff.df()">click</button>
+        </div>
+        `;
   }
 }
+const ff = new FF();
 
-const ff = new FF({
-  props: {
-    name: "new name"
+
+
+
+class FFF {
+  constructor() {
+    this.run();
   }
-});
-ff.run();
+  run() {
+    self.fff = this;
+  }
+  df() {
+    sta.fff.test = "click df";
+    //console.log("test");
+    Renders();
+  }
+  component() {
+    return `
+          <div>submodule des ------------ ${sta.fff.test}
+          <button onClick="self.fff.df()">click</button>
+          </div>
+          `;
+  }
+}
+const fff = new FFF();
+
 /**
  * extends PutiFlame
  */
-class F extends Putity {
+class F {
   constructor(h) {
-    super(h);
-  }
-  setState() {
-    return (self.state = {
-      test: "test message",
-      goukei: 1
-    });
+    this.run();
   }
   sender() {
-    this.changeState("test", "change message");
-  }
-  alertmessage() {
-    const temp = self.state.goukei + 1;
-    this.changeState("goukei", temp);
+    sta.f.goukei += 1;
+    //console.log("sender");
+    Renders();
   }
   run() {
     window.f = this;
   }
 
-  render() {
-    const myname = this.props.name;
-
+  component() {
+    const myname = "name";
     return `<p>
         my name is ${myname}
-        <br>this is ${self.state.test}
-        <br>goukei is ${self.state.goukei}
+        <br>this is ${sta.f.test}
+        <br>goukei is ${sta.f.goukei}
         <span id="app2"></span>
-        ${ff.render()}
+        ${ff.component()}
+        </p>
+        <p>
+        ${fff.component()}
         </p>
         <button onClick="window.f.sender()">test</button>  
         `;
   }
 }
+const f = new F();
 
-const f = new F({
-  props: {
-    name: "new name"
-  },
-  targetDom: "app"
-});
-f.run();
-//ff.setjoin(f);    
+const BaseComponent = f;
+const BaseAppID = "app";
+const Renders = function() {
+  let tcontents = document.createElement("div");
+  tcontents.innerHTML = BaseComponent.component();
+
+  let dom = document.getElementById(BaseAppID);
+  dom.innerHTML = "";
+  dom.appendChild(tcontents);
+};
+Renders();
