@@ -1,9 +1,8 @@
-# PutiFrame
+# Putity
 
-イベントに関するアプローチが
+Purity is Simple Packing Library to class js template and js method.
 
-new で作成されたオブジェクトを関数内から呼び直すか
+This library construction of PutityComponent.
 
-addEventlistnerするか
 
 

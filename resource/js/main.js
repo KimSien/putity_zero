@@ -1,108 +1,83 @@
-import Putity from "./Putity/Putity";
-
-var sta = {
-  fff: {
-    test: "this is global ff"
-  },
-  ff: {
-    test: "this is global ff"
-  },
-  f: {
-    test: "test message",
-    goukei: 1
+/*
+; (function (w) {
+  class PutitiyComponent {
+      constructor() {
+          this.componentname = "PutitiyComponent";
+      }
   }
-};
+  w.PutitiyComponent = PutitiyComponent;
 
+  w.PutityApp = {
+      AtachComponent: "",
+      AtachDom: ""
+  };
 
-class FF {
+  w.PutitiyComponentAtach = (name, classobject) => {
+      w[name] = new classobject();
+      w[name].component = "window." + name;
+      //Object.freeze(w[name].name);
+
+      return w[name];
+  }
+  w.PutitiyRender = () => {
+
+      const str = w.PutityApp.AtachComponent.renders();
+      const replaced = str.replace(/<king2>/g, w.king2.renders());
+      console.log(replaced) // apple banana orange
+
+      const dummy = document.createElement("div");
+      dummy.innerHTML = w.PutityApp.AtachComponent.renders();
+      document.querySelector(w.PutityApp.AtachDom).innerHTML = dummy.innerHTML;
+  }
+
+})(window)
+*/
+
+import {PutitiyComponent,PutitiyComponentAtach,PutitiyRender,PutitySet} from "./Putity/PutityComponent";
+
+class Ems2 extends PutitiyComponent {
   constructor() {
-    this.run();
+      super();
+      this.name = "king";
   }
-  run() {
-    self.ff = this;
+  hello(n) {
+      console.log(n);
+      this.name = "queen";
+      PutitiyRender();
   }
-  df() {
-    sta.ff.test = "click df";
-    //console.log("test");
-    Renders();
-  }
-  component() {
-    return `
-        <div>submodule des ------------ ${sta.ff.test}
-        <button onClick="self.ff.df()">click</button>
-        </div>
-        `;
+
+  renders() {
+      return `
+      <p>my name is ${this.name} module </p> 
+      <button onClick="${this.component}.hello('blocken')">click</button>
+      `;
   }
 }
-const ff = new FF();
+PutitiyComponentAtach("king2", Ems2);
+PutitiyComponentAtach("king3", Ems2);
 
 
-
-
-class FFF {
+class Ems extends PutitiyComponent {
   constructor() {
-    this.run();
+      super();
+      this.name = "king";
   }
-  run() {
-    self.fff = this;
+  hello(n) {
+      console.log(n);
+      this.name = "queen";
+      PutitiyRender();
   }
-  df() {
-    sta.fff.test = "click df";
-    //console.log("test");
-    Renders();
-  }
-  component() {
-    return `
-          <div>submodule des ------------ ${sta.fff.test}
-          <button onClick="self.fff.df()">click</button>
-          </div>
-          `;
+  renders() {
+      return `
+      <p>my name is ${this.name} module </p> 
+      <button onClick="${this.component}.hello('blocken')">click</button>
+      <king2>
+      ${king3.renders()}
+
+      `;
   }
 }
-const fff = new FFF();
 
-/**
- * extends PutiFlame
- */
-class F {
-  constructor(h) {
-    this.run();
-  }
-  sender() {
-    sta.f.goukei += 1;
-    //console.log("sender");
-    Renders();
-  }
-  run() {
-    window.f = this;
-  }
-
-  component() {
-    const myname = "name";
-    return `<p>
-        my name is ${myname}
-        <br>this is ${sta.f.test}
-        <br>goukei is ${sta.f.goukei}
-        <span id="app2"></span>
-        ${ff.component()}
-        </p>
-        <p>
-        ${fff.component()}
-        </p>
-        <button onClick="window.f.sender()">test</button>  
-        `;
-  }
-}
-const f = new F();
-
-const BaseComponent = f;
-const BaseAppID = "app";
-const Renders = function() {
-  let tcontents = document.createElement("div");
-  tcontents.innerHTML = BaseComponent.component();
-
-  let dom = document.getElementById(BaseAppID);
-  dom.innerHTML = "";
-  dom.appendChild(tcontents);
-};
-Renders();
+PutitiyComponentAtach("king", Ems);
+PutitySet(king,"#app");
+PutitiyRender();
