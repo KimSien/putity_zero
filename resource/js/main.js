@@ -1,26 +1,13 @@
 import {PutitiyComponent,Putity} from "./Putity/PutityComponent";
 
-class Ems2 extends PutitiyComponent {
-  constructor() {
-      super();
-      this.name = "king";
-  }
-  hello(n) {
-      console.log(n);
-      this.name = "queen";
-      Putity.Render();
-  }
+import {Ems2} from "./Ems2";
 
-  renders() {
-      return `
-      <p>my name is ${this.name} module </p> 
-      <button onClick="${this.component}.hello('blocken')">click</button>
-      `;
-  }
-}
 Putity.ComponentAtach("king2", Ems2);
-Putity.ComponentAtach("king3", Ems2);
+//Putity.ComponentAtach("king3", Ems2);
+  
+// Merge all of the nodes that the callback returns
 
+  
 class Ems extends PutitiyComponent {
   constructor() {
       super();
@@ -36,8 +23,6 @@ class Ems extends PutitiyComponent {
       <p>my name is ${this.name} module </p> 
       <button onClick="${this.component}.hello('blocken')">click</button>
       ${king2.renders()}
-      ${king3.renders()}
-
       `;
   }
 }

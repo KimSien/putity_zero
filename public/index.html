@@ -1,15 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h2>test</h2>
     <div id="app"></div>
+
+    <form>
+      <textarea></textarea>
+    </form>
+
+    <script>
+    const form = document.querySelector('form');
+const textarea = document.querySelector('textarea');
+
+// 新しいイベントを生成し、バブリングを許可し、 "detail" プロパティに渡したいデータを設定する
+const eventAwesome = new CustomEvent('awesome', {
+  bubbles: true,
+  detail: { text: () => textarea.value }
+});
+
+// フォームイベントが "awesome" カスタムイベントを待ち受けし、渡されたものの text() メソッドをコンソールに出力する
+form.addEventListener('awesome', e => console.log(e.detail.text()));
+
+// ユーザー型の場合、 form 内の textarea は発生させるイベントを起動・処理し、それを開始点として使用する
+textarea.addEventListener('input', e => e.target.dispatchEvent(eventAwesome));
+    </script>
     <script src="./asset/js/main.js"></script>
-</body>
+  </body>
 </html>

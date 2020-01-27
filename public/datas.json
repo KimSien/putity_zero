@@ -1,0 +1,11 @@
+{
+    "name":"datajson",
+    "data": [
+        {
+            "name" : "tarou"
+        },
+        {
+            "name" : "jirou"
+        }
+    ]
+}
