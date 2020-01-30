@@ -1,4 +1,4 @@
-import {PutitiyComponent,Putity} from "./Putity/PutityComponent";
+import {PutitiyComponent,Putity} from "./Putity/Putity";
 
 import {Ems2} from "./Ems2";
 

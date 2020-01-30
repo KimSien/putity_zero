@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./resource/js/Putity/Putity.js":
+/*!**************************************!*\
+  !*** ./resource/js/Putity/Putity.js ***!
+  \**************************************/
+/*! exports provided: PutitiyComponent, Putity */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _PutityComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PutityComponent */ \"./resource/js/Putity/PutityComponent.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"PutitiyComponent\", function() { return _PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"PutitiyComponent\"]; });\n\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"Putity\", function() { return _PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"]; });\n\n/**\n * \n * Putity \n * \n * ver 0.1\n * \n * \n */\n\n\n//# sourceURL=webpack:///./resource/js/Putity/Putity.js?");
+
+/***/ }),
+
 /***/ "./resource/js/Putity/PutityComponent.js":
 /*!***********************************************!*\
   !*** ./resource/js/Putity/PutityComponent.js ***!
@@ -118,7 +130,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Putity/PutityComponent */ \"./resource/js/Putity/PutityComponent.js\");\n/* harmony import */ var _Ems2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Ems2 */ \"./resource/js/Ems2.js\");\n\n\n_Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].ComponentAtach(\"king2\", _Ems2__WEBPACK_IMPORTED_MODULE_1__[\"Ems2\"]); //Putity.ComponentAtach(\"king3\", Ems2);\n// Merge all of the nodes that the callback returns\n\nclass Ems extends _Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"PutitiyComponent\"] {\n  constructor() {\n    super();\n    this.name = \"king5\";\n  }\n\n  hello(n) {\n    console.log(n);\n    this.name = \"queen\";\n    _Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].Render();\n  }\n\n  renders() {\n    return `\n      <p>my name is ${this.name} module </p> \n      <button onClick=\"${this.component}.hello('blocken')\">click</button>\n      ${king2.renders()}\n      `;\n  }\n\n}\n\n_Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].ComponentAtach(\"king\", Ems);\n_Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].RenderSetting(king, \"#app\");\n_Putity_PutityComponent__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].Run();\n\n//# sourceURL=webpack:///./resource/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Putity_Putity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Putity/Putity */ \"./resource/js/Putity/Putity.js\");\n/* harmony import */ var _Ems2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Ems2 */ \"./resource/js/Ems2.js\");\n\n\n_Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].ComponentAtach(\"king2\", _Ems2__WEBPACK_IMPORTED_MODULE_1__[\"Ems2\"]); //Putity.ComponentAtach(\"king3\", Ems2);\n// Merge all of the nodes that the callback returns\n\nclass Ems extends _Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"PutitiyComponent\"] {\n  constructor() {\n    super();\n    this.name = \"king5\";\n  }\n\n  hello(n) {\n    console.log(n);\n    this.name = \"queen\";\n    _Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].Render();\n  }\n\n  renders() {\n    return `\n      <p>my name is ${this.name} module </p> \n      <button onClick=\"${this.component}.hello('blocken')\">click</button>\n      ${king2.renders()}\n      `;\n  }\n\n}\n\n_Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].ComponentAtach(\"king\", Ems);\n_Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].RenderSetting(king, \"#app\");\n_Putity_Putity__WEBPACK_IMPORTED_MODULE_0__[\"Putity\"].Run();\n\n//# sourceURL=webpack:///./resource/js/main.js?");
 
 /***/ })
 

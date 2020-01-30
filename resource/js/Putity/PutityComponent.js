@@ -2,7 +2,7 @@ export class PutitiyComponent {
   constructor() {
     this.state = [];
   }
-
+  
   CallAjax(jsonurl) {
     return fetch(jsonurl)
       .then(function(response) {
