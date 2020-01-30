@@ -12,11 +12,11 @@ export class Ems2 extends PutitiyComponent {
     Putity.Render();
   }
   async GetJson() {
-    const url="datas.json";
+    const url = "datas.json";
     const d = await this.CallAjax(url);
     this.name = d.data[1].name;
     Putity.Render();
-  
+
   }
   renders() {
     //console.log(this.datajson);
@@ -26,5 +26,8 @@ export class Ems2 extends PutitiyComponent {
         <button onClick="${this.component}.GetJson()">getjson1</button>
         <button onClick="${this.component}.hello('blocken')">click</button>
         `;
+  }
+  component() {
+    return this.renders();
   }
 }
