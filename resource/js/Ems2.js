@@ -1,5 +1,11 @@
 import { PutitiyComponent, Putity } from "./Putity/PutityComponent";
 
+/**
+ * 
+ * g.x) GetJson
+ * 
+ * 
+ */
 export class Ems2 extends PutitiyComponent {
   constructor(childname) {
     super();

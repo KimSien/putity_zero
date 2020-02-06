@@ -51,6 +51,8 @@ export class Putity {
 
   /**
    * 
+   * 
+   * 
    */
   static Render() {
     const str = window.PutityApp.AtachComponent.renders();
@@ -60,6 +62,8 @@ export class Putity {
       dummy.innerHTML;
   }
   /**
+   * 
+   * syuger coarting function
    * 
    */
   static Run() {
