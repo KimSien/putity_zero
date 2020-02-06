@@ -8,7 +8,8 @@
     "build": "webpack --mode development",
     "watch:webpack": "webpack --mode development",
     "watch:watch": "watch \" npm run watch:webpack\" ./resource",
-    "watch": "npm-run-all watch:*"
+    "watch": "npm-run-all watch:*",
+    "jdoc": "npx jsdoc -c jdoc.config.json"
   },
   "author": "kim",
   "license": "ISC",
@@ -35,6 +36,7 @@
     "gulp-replace": "^1.0.0",
     "html-loader": "^0.5.5",
     "jest": "^25.1.0",
+    "jsdoc": "^3.6.3",
     "mini-css-extract-plugin": "^0.8.2",
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.5",
