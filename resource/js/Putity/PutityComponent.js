@@ -1,16 +1,47 @@
 /**
  * Class PutityComponet
- * @constructor
+ * @class
+ * 
+ * @example
+ * 
+ * class EMS extends PutitiyComponent{}
+ * 
+ * // x const king = new EMS();
+ * // if you create king object
+ * // you use to Putitiy.ComponentAttach(object name,class name);
+ * Putity.ComponentAtach("king", Ems);
+ * 
+ * 
  */
 export class PutitiyComponent {
+
+  /**
+   * 
+   * constractor
+   * @constructor
+   * 
+   */
   constructor() {
     this.state = [];
   }
 
   /**
    * Get Json Data with Ajax.
-   * @param {string} jsonurl - json url path
+   * @param {string} jsonurl - set json url path / g.x) ***.json
    * @returns {json} return value with jsondata
+   * @example
+   *  
+   * // add async function
+   * // get jsondata into class property
+   * // and call Putitiy.Render()
+   * 
+   *  async GetJson() {
+   *  const url = "datas.json";
+   *  const d = await this.CallAjax(url);
+   *  this.name = d.data[1].name;
+   *  Putity.Render();
+   *  }
+   * 
    */
   CallAjax(jsonurl) {
     return fetch(jsonurl)
@@ -31,6 +62,12 @@ export class PutitiyComponent {
 
   /**
    * need implement this function with extends putity component class.
+   * 
+   * @example
+   * return `
+   *  <ul>${this.kingname}</ul>
+   * ';
+   * 
    */
   renders() { }
 
