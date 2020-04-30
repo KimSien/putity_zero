@@ -60,7 +60,7 @@
   "private": true,
   "dependencies": {
     "browserlist": "^1.0.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "js-cookie": "^2.2.1",
     "umbrellajs": "^3.1.0",
     "vue": "^2.6.11"
